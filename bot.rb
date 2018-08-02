@@ -3,7 +3,7 @@ require 'net/http'
 require 'active_support'
 require 'active_support/core_ext'
 
-bot = Discordrb::Bot.new token: 'NDA0MTg3NjA4MzUzMjEwMzY5.DhUxFg.Ymrp13obKbYMoVbDsTRIxZDpR0w'
+bot = Discordrb::Bot.new token:
 
 
 def url_exist?(url_string)
