@@ -2,8 +2,34 @@ require 'discordrb'
 require 'net/http'
 require 'active_support'
 require 'active_support/core_ext'
+require 'nokogiri'
+require 'uri'
+require 'rubygems'
+require 'json'
 
-bot = Discordrb::Bot.new token:
+
+def open(url)
+  Net::HTTP.get(URI.parse(url))
+end
+
+class Card
+  def initialize(num,color)
+    @num = num
+    @color = color
+  end
+  def returninf
+    return @num+", "+@color
+  end
+end
+
+class Player
+  def initialize(name,id)
+    @name = name
+    @id = id
+  end
+end
+
+bot = Discordrb::Bot.new token:""
 
 
 def url_exist?(url_string)
@@ -48,11 +74,8 @@ bot.message(start_with:'!git ') do |event|
 end
 end
 
-bot.message(start_with:'!raw ') do |event|
-	x = event.content.to_s
-	y = x.length
-	z = x[5..y]
-    
+bot.message(start_with:'!UNO ') do |event|
+	
 end
 
 bot.run
